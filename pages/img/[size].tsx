@@ -25,7 +25,7 @@ const DynamicPage = ({ imageUrl }) => {
   const router = useRouter();
   useEffect(() => {
     // 使用 replace 方法进行重定向
-    // if (imageUrl) router.replace(imageUrl);
+    if (imageUrl) router.replace(imageUrl);
   }, [imageUrl]);
 
   return imageUrl ? (
