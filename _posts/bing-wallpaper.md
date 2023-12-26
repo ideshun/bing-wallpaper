@@ -46,7 +46,7 @@ Bing首页每日更新一张来自世界各地的精美图片。通过提供的A
 ### 随机输出图片
 
 ```
-<img src="https://bz.w3h5.com/img/rand_uhd" alt="Bing 每日壁纸 UHD超清 随机" />
+<img src="https://bz.w3h5.com/img/rand" alt="Bing 每日壁纸 UHD超清 随机" />
 
 <img src="https://bz.w3h5.com/img/rand_fhd" alt="Bing 每日壁纸 1080P高清 随机" />
 
