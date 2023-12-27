@@ -35,7 +35,7 @@ Bing首页每日更新一张来自世界各地的精美图片。通过提供的A
 ### 随机输出图片
 
 ```
-<img src="https://bz.w3h5.com/img/rand_uhd" alt="Bing 每日壁纸 UHD超清 随机" />
+<img src="https://bz.w3h5.com/img/rand" alt="Bing 每日壁纸 UHD超清 随机" />
 
 <img src="https://bz.w3h5.com/img/rand_fhd" alt="Bing 每日壁纸 1080P高清 随机" />
 
@@ -56,6 +56,14 @@ Bing首页每日更新一张来自世界各地的精美图片。通过提供的A
 [https://bz.w3h5.com/img/hd](https://bz.w3h5.com/img/hd) 链接直接输出 1366×768 分辨率图片。
 
 [https://bz.w3h5.com/img/m](https://bz.w3h5.com/img/m) 链接直接输出 1080×1920 分辨率竖版图片。
+
+[https://bz.w3h5.com/img/rand](https://bz.w3h5.com/img/rand) 链接随机输出 UHD超清图片。
+
+[https://bz.w3h5.com/img/rand_fhd](https://bz.w3h5.com/img/rand_fhd) 链接随机输出 1920×1080 分辨率图片。
+
+[https://bz.w3h5.com/img/rand_hd](https://bz.w3h5.com/img/rand_hd) 链接随机输出 1366×768 分辨率图片。
+
+[https://bz.w3h5.com/img/rand_m](https://bz.w3h5.com/img/rand_m) 链接随机输出 1080×1920 分辨率竖版图片。
 
 ## 版本更新
 

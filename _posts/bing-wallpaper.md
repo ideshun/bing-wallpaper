@@ -9,6 +9,7 @@ author:
 ogImage:
   url: '/assets/blog/bing-wallpaper/cover.jpg'
 ---
+
 ## 简介
 
 Bing首页每日更新一张来自世界各地的精美图片。通过提供的API链接可以简单、快速地获取栩栩如生的每日壁纸，每日自动更新，作为网站背景和电脑壁纸都非常不错……
@@ -67,6 +68,14 @@ Bing首页每日更新一张来自世界各地的精美图片。通过提供的A
 [https://bz.w3h5.com/img/hd](https://bz.w3h5.com/img/hd) 链接直接输出 1366×768 分辨率图片。
 
 [https://bz.w3h5.com/img/m](https://bz.w3h5.com/img/m) 链接直接输出 1080×1920 分辨率竖版图片。
+
+[https://bz.w3h5.com/img/rand](https://bz.w3h5.com/img/rand) 链接随机输出 UHD超清图片。
+
+[https://bz.w3h5.com/img/rand_fhd](https://bz.w3h5.com/img/rand_fhd) 链接随机输出 1920×1080 分辨率图片。
+
+[https://bz.w3h5.com/img/rand_hd](https://bz.w3h5.com/img/rand_hd) 链接随机输出 1366×768 分辨率图片。
+
+[https://bz.w3h5.com/img/rand_m](https://bz.w3h5.com/img/rand_m) 链接随机输出 1080×1920 分辨率竖版图片。
 
 ## 版本更新
 

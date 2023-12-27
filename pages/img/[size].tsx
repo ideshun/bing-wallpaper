@@ -1,13 +1,11 @@
 /*
  * @Author: Deshun
  * @Date: 2023-12-26 17:38:20
- * @LastEditors: Please set LastEditors
+ * @LastEditors: Deshun
  * @Description: 获取 Bing 每日壁纸图片
- * @FilePath: /bing-wallpaper/pages/img/[size].tsx
+ * @FilePath: /bing.w3h5.com/pages/img/[size].tsx
  * Copyright (c) 2023 by contact@w3h5.com, All Rights Reserved.
  */
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 import { findKey, getBingImages } from "../../lib/api";
 
 const sizes = {
@@ -22,20 +20,8 @@ const sizes = {
 };
 
 const DynamicPage = ({ imageUrl }) => {
-  const router = useRouter();
-  useEffect(() => {
-    // 使用 replace 方法进行重定向
-    if (imageUrl) router.replace(imageUrl);
-  }, [imageUrl]);
-
-  return imageUrl ? (
-    <img
-      src={imageUrl}
-      alt="Bing Homepage Background"
-      style={{ maxWidth: "100%" }}
-    />
-  ) : (
-    <p>Error loading image</p>
+  return (
+    <img src={imageUrl} alt="Bing 每日壁纸" /> || <p>Error loading image</p>
   );
 };
 
