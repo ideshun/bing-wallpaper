@@ -72,15 +72,15 @@ export async function getBingImages({
   ind?: number;
   num?: number;
   type: string;
-  }) {
-    /**
-     * 参数说明:
-     * idx?: 请求图片截止天数: 0 今天; -1 截止至明天(预准备的); 1 截止至昨天，类推（目前最多获取到16天前的图片）
-     * n: 1-8 返回请求数量，目前最多一次获取8张
-     * mkt?: 地区 zh-CN(中国)
-     */
-    const response = await axios.get(
-      `https://cn.bing.com/HPImageArchive.aspx?format=js&idx=${ind}&n=${num}&mkt=zh-CN`
-    );
-    return `https://cn.bing.com${response.data.images[0].urlbase}_${type}.jpg`;
-  }
+}) {
+  /**
+   * 参数说明:
+   * idx?: 请求图片截止天数: 0 今天; -1 截止至明天(预准备的); 1 截止至昨天，类推（目前最多获取到16天前的图片）
+   * n: 1-8 返回请求数量，目前最多一次获取8张
+   * mkt?: 地区 zh-CN(中国)
+   */
+  const response = await axios.get(
+    `https://cn.bing.com/HPImageArchive.aspx?format=js&idx=${ind}&n=${num}&mkt=zh-CN`
+  );
+  return `https://cn.bing.com${response.data.images[0].urlbase}_${type}.jpg`;
+}

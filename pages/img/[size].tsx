@@ -25,9 +25,10 @@ const DynamicPage = ({ imageUrl }) => {
   );
 };
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, query }) {
   try {
     const { size } = params;
+    const { idx } = query;
     let type = "UHD";
     const key = findKey(sizes, size.toLowerCase());
     if (key) type = sizes[key];
@@ -39,7 +40,7 @@ export async function getServerSideProps({ params }) {
       };
     }
     return {
-      props: { imageUrl: await getBingImages({ type }) },
+      props: { imageUrl: await getBingImages({ ind: idx && idx % 15, type }) }, // 页面接受一个idx参数，指定几天前的壁纸，如果有该参数，会自动取几天前的壁纸，最大支持15天
     };
   } catch (error) {
     console.error("Error fetching image:", error.message);
