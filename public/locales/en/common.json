@@ -1,0 +1,106 @@
+{
+  "site": {
+    "name": "Bing Wallpaper",
+    "title": "Bing Wallpaper — Daily Bing Wallpaper API",
+    "description": "Daily Bing Wallpaper API — fetch beautiful wallpapers from around the world quickly, with multiple resolutions and random picks.",
+    "h1": "Daily Bing Wallpaper API",
+    "ogSubtitle": "Fetch beautiful wallpapers from around the world quickly, with multiple resolutions and random picks"
+  },
+  "nav": {
+    "gallery": "Gallery",
+    "usage": "Usage"
+  },
+  "hero": {
+    "badge": "Today's wallpaper · Updates daily",
+    "download": "Download original",
+    "copyApi": "Copy API link"
+  },
+  "home": {
+    "whyTitle": "Why choose us?",
+    "dailyTitle": "Daily wallpaper",
+    "dailyDesc": "Get today's Bing homepage wallpaper in multiple resolutions.",
+    "randomTitle": "Random wallpaper",
+    "randomDesc": "Return a random wallpaper from history on each request.",
+    "galleryTitle": "Recent wallpapers",
+    "galleryDesc": "Browse Bing featured wallpapers from the last 8 days"
+  },
+  "features": {
+    "resolution": {
+      "title": "Multiple resolutions",
+      "description": "UHD, 1080P, HD, and mobile portrait for every use case"
+    },
+    "random": {
+      "title": "Random wallpaper",
+      "description": "Pick randomly from history to surprise your pages"
+    },
+    "history": {
+      "title": "History lookup",
+      "description": "Use the idx parameter to fetch wallpapers from the last 15 days"
+    },
+    "easy": {
+      "title": "Drop-in ready",
+      "description": "Use a single img tag or CSS background to integrate"
+    }
+  },
+  "endpoints": {
+    "viewHtml": "View HTML example",
+    "recommended": "Recommended",
+    "uhd": {
+      "label": "UHD Ultra",
+      "description": "Ultra HD original for 4K displays"
+    },
+    "fhd": {
+      "label": "1080P HD",
+      "description": "Standard HD for most screens"
+    },
+    "hd": {
+      "label": "HD",
+      "description": "Great for laptops and web backgrounds"
+    },
+    "m": {
+      "label": "Mobile portrait",
+      "description": "Portrait HD for phone wallpapers"
+    },
+    "rand": {
+      "label": "Random UHD",
+      "description": "Random ultra HD wallpaper from history"
+    },
+    "rand_fhd": {
+      "label": "Random 1080P",
+      "description": "Random 1080P HD wallpaper"
+    },
+    "rand_hd": {
+      "label": "Random HD",
+      "description": "Random HD wallpaper"
+    },
+    "rand_m": {
+      "label": "Random mobile",
+      "description": "Random mobile portrait wallpaper"
+    }
+  },
+  "usage": {
+    "title": "Quick start",
+    "intro": "Use the API link as an image URL in HTML, Markdown, or CSS backgrounds.",
+    "html": "HTML embed",
+    "css": "CSS background",
+    "idxTitle": "Historical wallpaper (idx)",
+    "idxDesc": "Use the idx parameter to fetch wallpapers from previous days, up to 15 days.",
+    "idxToday": "idx=0 today",
+    "idxYesterday": "idx=1 yesterday",
+    "idxWeek": "idx=7 a week ago",
+    "imgAlt": "Bing daily wallpaper"
+  },
+  "copy": {
+    "label": "Copy",
+    "done": "Copied"
+  },
+  "footer": {
+    "copyright": "Wallpaper copyright belongs to Microsoft Bing"
+  },
+  "errors": {
+    "imageLoadFailed": "Failed to load image"
+  },
+  "date": {
+    "format": "MMMM d, EEEE"
+  }
+}

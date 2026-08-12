@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /img/
+
+Sitemap: https://bz.w3h5.com/sitemap.xml

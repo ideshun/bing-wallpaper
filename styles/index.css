@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-surface: 248 250 252; /* slate-50 */
+    --color-surface-light: 241 245 249; /* slate-100 */
+    --color-surface-card: 255 255 255;
+    --color-fg: 15 23 42; /* slate-900 */
+    --color-fg-muted: 71 85 105; /* slate-600 */
+    --color-fg-subtle: 100 116 139; /* slate-500 */
+    --color-border: 226 232 240; /* slate-200 */
+    --color-border-strong: 203 213 225; /* slate-300 */
+    --color-fill: 241 245 249; /* slate-100 */
+    --color-fill-hover: 226 232 240; /* slate-200 */
+    --color-code-bg: 241 245 249;
+  }
+
+  .dark {
+    --color-surface: 15 23 42; /* slate-900 */
+    --color-surface-light: 30 41 59; /* slate-800 */
+    --color-surface-card: 30 41 59;
+    --color-fg: 241 245 249; /* slate-100 */
+    --color-fg-muted: 148 163 184; /* slate-400 */
+    --color-fg-subtle: 100 116 139; /* slate-500 */
+    --color-border: 51 65 85; /* slate-700 approx white/10 feel */
+    --color-border-strong: 71 85 105;
+    --color-fill: 51 65 85;
+    --color-fill-hover: 71 85 105;
+    --color-code-bg: 2 6 23;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-fg antialiased;
+  }
+
+  ::selection {
+    @apply bg-bing-500/40 text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-2xl border border-border bg-surface-card/80 backdrop-blur-xl shadow-xl dark:bg-surface-card/60;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-bing-600 via-bing-500 to-cyan-500 bg-clip-text text-transparent dark:from-bing-300 dark:via-bing-400 dark:to-cyan-300;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold tracking-tight text-fg;
+  }
+
+  .code-block {
+    @apply rounded-lg bg-code border border-border px-4 py-3 font-mono text-sm text-fg-muted overflow-x-auto;
+  }
+
+  .nav-link {
+    @apply rounded-lg px-3 py-2 text-sm text-fg-muted transition-colors hover:bg-fill hover:text-fg;
+  }
+
+  .nav-btn {
+    @apply inline-flex items-center gap-1.5 rounded-lg border border-border bg-fill px-3 py-2 text-sm text-fg-muted transition-all hover:border-border-strong hover:bg-fill-hover hover:text-fg;
+  }
+}

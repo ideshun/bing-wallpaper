@@ -1,0 +1,106 @@
+{
+  "site": {
+    "name": "Bing Wallpaper",
+    "title": "Bing Wallpaper — Tägliche Bing-Wallpaper-API",
+    "description": "Tägliche Bing-Wallpaper-API — holen Sie schnell hochwertige Wallpapers aus aller Welt, mit mehreren Auflösungen und Zufallsauswahl.",
+    "h1": "Tägliche Bing-Wallpaper-API",
+    "ogSubtitle": "Holen Sie schnell hochwertige Wallpapers aus aller Welt, mit mehreren Auflösungen und Zufallsauswahl"
+  },
+  "nav": {
+    "gallery": "Galerie",
+    "usage": "Nutzung"
+  },
+  "hero": {
+    "badge": "Heutiges Wallpaper · Täglich aktualisiert",
+    "download": "Original herunterladen",
+    "copyApi": "API-Link kopieren"
+  },
+  "home": {
+    "whyTitle": "Warum wir?",
+    "dailyTitle": "Tägliches Wallpaper",
+    "dailyDesc": "Holen Sie das heutige Bing-Startseiten-Wallpaper in mehreren Auflösungen.",
+    "randomTitle": "Zufälliges Wallpaper",
+    "randomDesc": "Gibt bei jeder Anfrage ein zufälliges Wallpaper aus der Historie zurück.",
+    "galleryTitle": "Aktuelle Wallpapers",
+    "galleryDesc": "Durchstöbern Sie Bing-Wallpapers der letzten 8 Tage"
+  },
+  "features": {
+    "resolution": {
+      "title": "Mehrere Auflösungen",
+      "description": "UHD, 1080P, HD und Hochformat für Mobilgeräte"
+    },
+    "random": {
+      "title": "Zufälliges Wallpaper",
+      "description": "Zufällige Auswahl aus der Historie für Überraschungen"
+    },
+    "history": {
+      "title": "Historie",
+      "description": "Mit dem idx-Parameter Wallpapers der letzten 15 Tage abrufen"
+    },
+    "easy": {
+      "title": "Sofort einsatzbereit",
+      "description": "Mit einem img-Tag oder CSS-Hintergrund integrieren"
+    }
+  },
+  "endpoints": {
+    "viewHtml": "HTML-Beispiel anzeigen",
+    "recommended": "Empfohlen",
+    "uhd": {
+      "label": "UHD Ultra",
+      "description": "Ultra-HD-Original für 4K-Displays"
+    },
+    "fhd": {
+      "label": "1080P HD",
+      "description": "Standard-HD für die meisten Bildschirme"
+    },
+    "hd": {
+      "label": "HD",
+      "description": "Ideal für Laptops und Web-Hintergründe"
+    },
+    "m": {
+      "label": "Mobil Hochformat",
+      "description": "Hochformat-HD für Handy-Wallpapers"
+    },
+    "rand": {
+      "label": "Zufällig UHD",
+      "description": "Zufälliges Ultra-HD-Wallpaper aus der Historie"
+    },
+    "rand_fhd": {
+      "label": "Zufällig 1080P",
+      "description": "Zufälliges 1080P-HD-Wallpaper"
+    },
+    "rand_hd": {
+      "label": "Zufällig HD",
+      "description": "Zufälliges HD-Wallpaper"
+    },
+    "rand_m": {
+      "label": "Zufällig mobil",
+      "description": "Zufälliges mobiles Hochformat-Wallpaper"
+    }
+  },
+  "usage": {
+    "title": "Schnellstart",
+    "intro": "Verwenden Sie den API-Link als Bild-URL in HTML, Markdown oder CSS-Hintergründen.",
+    "html": "HTML einbetten",
+    "css": "CSS-Hintergrund",
+    "idxTitle": "Historisches Wallpaper (idx)",
+    "idxDesc": "Mit dem idx-Parameter Wallpapers früherer Tage abrufen, bis zu 15 Tage.",
+    "idxToday": "idx=0 heute",
+    "idxYesterday": "idx=1 gestern",
+    "idxWeek": "idx=7 vor einer Woche",
+    "imgAlt": "Tägliches Bing-Wallpaper"
+  },
+  "copy": {
+    "label": "Kopieren",
+    "done": "Kopiert"
+  },
+  "footer": {
+    "copyright": "Wallpaper-Urheberrecht liegt bei Microsoft Bing"
+  },
+  "errors": {
+    "imageLoadFailed": "Bild konnte nicht geladen werden"
+  },
+  "date": {
+    "format": "d. MMMM, EEEE"
+  }
+}

@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+package-lock.json
+yarn.lock
 
 # testing
 /coverage
@@ -17,9 +19,11 @@
 /build
 
 # misc
+.cursor
 .DS_Store
 *.pem
 .history
+/logs
 
 # debug
 npm-debug.log*

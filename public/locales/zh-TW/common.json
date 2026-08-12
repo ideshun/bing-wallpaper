@@ -1,0 +1,106 @@
+{
+  "site": {
+    "name": "Bing Wallpaper",
+    "title": "Bing Wallpaper — 必應每日壁紙 API",
+    "description": "必應每日壁紙 API — 簡單、快速地取得來自世界各地的高清壁紙，支援多種解析度與隨機取得。",
+    "h1": "必應每日壁紙 API",
+    "ogSubtitle": "簡單、快速地取得來自世界各地的高清壁紙，支援多種解析度與隨機取得"
+  },
+  "nav": {
+    "gallery": "畫廊",
+    "usage": "用法"
+  },
+  "hero": {
+    "badge": "今日壁紙 · 每日自動更新",
+    "download": "下載原圖",
+    "copyApi": "複製 API 連結"
+  },
+  "home": {
+    "whyTitle": "為什麼選擇我們？",
+    "dailyTitle": "每日壁紙",
+    "dailyDesc": "取得 Bing 首頁當日壁紙，支援多種解析度。",
+    "randomTitle": "隨機壁紙",
+    "randomDesc": "從歷史圖庫中隨機回傳一張壁紙，每次請求結果不同。",
+    "galleryTitle": "近期壁紙",
+    "galleryDesc": "瀏覽最近 8 天的必應精選壁紙"
+  },
+  "features": {
+    "resolution": {
+      "title": "多種解析度",
+      "description": "UHD、1080P、標清、手機直式，滿足不同場景需求"
+    },
+    "random": {
+      "title": "隨機壁紙",
+      "description": "從歷史圖庫中隨機取得，為頁面增添驚喜"
+    },
+    "history": {
+      "title": "歷史回溯",
+      "description": "idx 參數支援取得最近 15 天的壁紙"
+    },
+    "easy": {
+      "title": "即插即用",
+      "description": "一行 img 標籤或 CSS 背景即可接入"
+    }
+  },
+  "endpoints": {
+    "viewHtml": "查看 HTML 範例",
+    "recommended": "推薦",
+    "uhd": {
+      "label": "UHD 超清",
+      "description": "超高清原圖，適合 4K 顯示器"
+    },
+    "fhd": {
+      "label": "1080P 高清",
+      "description": "標準高清，適合大多數螢幕"
+    },
+    "hd": {
+      "label": "標清",
+      "description": "適合筆記型電腦與網頁背景"
+    },
+    "m": {
+      "label": "手機直式",
+      "description": "直式高清，適合手機壁紙"
+    },
+    "rand": {
+      "label": "隨機 UHD",
+      "description": "從歷史壁紙中隨機回傳超清圖"
+    },
+    "rand_fhd": {
+      "label": "隨機 1080P",
+      "description": "隨機回傳 1080P 高清壁紙"
+    },
+    "rand_hd": {
+      "label": "隨機標清",
+      "description": "隨機回傳標清壁紙"
+    },
+    "rand_m": {
+      "label": "隨機手機版",
+      "description": "隨機回傳手機直式壁紙"
+    }
+  },
+  "usage": {
+    "title": "快速上手",
+    "intro": "將 API 連結直接作為圖片 URL 使用，插入 HTML、Markdown 或 CSS 背景即可。",
+    "html": "HTML 嵌入",
+    "css": "CSS 背景",
+    "idxTitle": "指定歷史壁紙（idx 參數）",
+    "idxDesc": "透過 idx 參數取得幾天前的壁紙，最多支援 15 天。",
+    "idxToday": "idx=0 今天",
+    "idxYesterday": "idx=1 昨天",
+    "idxWeek": "idx=7 一週前",
+    "imgAlt": "Bing 每日壁紙"
+  },
+  "copy": {
+    "label": "複製",
+    "done": "已複製"
+  },
+  "footer": {
+    "copyright": "壁紙版權歸 Microsoft Bing 所有"
+  },
+  "errors": {
+    "imageLoadFailed": "圖片載入失敗"
+  },
+  "date": {
+    "format": "M月d日 EEEE"
+  }
+}

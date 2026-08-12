@@ -1,0 +1,106 @@
+{
+  "site": {
+    "name": "Bing Wallpaper",
+    "title": "Bing Wallpaper — Bing 毎日壁紙 API",
+    "description": "Bing 毎日壁紙 API — 世界各地の美しい壁紙を素早く取得。複数の解像度とランダム取得に対応。",
+    "h1": "Bing 毎日壁紙 API",
+    "ogSubtitle": "世界各地の美しい壁紙を素早く取得。複数の解像度とランダム取得に対応"
+  },
+  "nav": {
+    "gallery": "ギャラリー",
+    "usage": "使い方"
+  },
+  "hero": {
+    "badge": "今日の壁紙 · 毎日更新",
+    "download": "原画をダウンロード",
+    "copyApi": "API リンクをコピー"
+  },
+  "home": {
+    "whyTitle": "選ばれる理由",
+    "dailyTitle": "毎日の壁紙",
+    "dailyDesc": "Bing ホームページ当日の壁紙を複数解像度で取得。",
+    "randomTitle": "ランダム壁紙",
+    "randomDesc": "履歴からランダムに 1 枚返します。リクエストごとに異なります。",
+    "galleryTitle": "最近の壁紙",
+    "galleryDesc": "直近 8 日分の Bing 精選壁紙を閲覧"
+  },
+  "features": {
+    "resolution": {
+      "title": "複数解像度",
+      "description": "UHD、1080P、HD、スマホ縦向きに対応"
+    },
+    "random": {
+      "title": "ランダム壁紙",
+      "description": "履歴からランダム取得してページを彩る"
+    },
+    "history": {
+      "title": "履歴取得",
+      "description": "idx パラメータで直近 15 日分を取得可能"
+    },
+    "easy": {
+      "title": "すぐ使える",
+      "description": "img タグまたは CSS 背景 1 行で導入"
+    }
+  },
+  "endpoints": {
+    "viewHtml": "HTML 例を見る",
+    "recommended": "おすすめ",
+    "uhd": {
+      "label": "UHD 超高画質",
+      "description": "4K ディスプレイ向けの超高画質原画"
+    },
+    "fhd": {
+      "label": "1080P 高画質",
+      "description": "ほとんどの画面向けの標準 HD"
+    },
+    "hd": {
+      "label": "HD",
+      "description": "ノートPCや Web 背景に最適"
+    },
+    "m": {
+      "label": "スマホ縦向き",
+      "description": "スマホ壁紙向けの縦向き HD"
+    },
+    "rand": {
+      "label": "ランダム UHD",
+      "description": "履歴からランダムな超高画質壁紙"
+    },
+    "rand_fhd": {
+      "label": "ランダム 1080P",
+      "description": "ランダムな 1080P 高画質壁紙"
+    },
+    "rand_hd": {
+      "label": "ランダム HD",
+      "description": "ランダムな HD 壁紙"
+    },
+    "rand_m": {
+      "label": "ランダムスマホ",
+      "description": "ランダムなスマホ縦向き壁紙"
+    }
+  },
+  "usage": {
+    "title": "クイックスタート",
+    "intro": "API リンクを画像 URL として HTML、Markdown、CSS 背景にそのまま使えます。",
+    "html": "HTML 埋め込み",
+    "css": "CSS 背景",
+    "idxTitle": "過去の壁紙（idx）",
+    "idxDesc": "idx パラメータで過去の壁紙を取得（最大 15 日）。",
+    "idxToday": "idx=0 今日",
+    "idxYesterday": "idx=1 昨日",
+    "idxWeek": "idx=7 1週間前",
+    "imgAlt": "Bing 毎日壁紙"
+  },
+  "copy": {
+    "label": "コピー",
+    "done": "コピー済み"
+  },
+  "footer": {
+    "copyright": "壁紙の著作権は Microsoft Bing に帰属します"
+  },
+  "errors": {
+    "imageLoadFailed": "画像の読み込みに失敗しました"
+  },
+  "date": {
+    "format": "M月d日 EEEE"
+  }
+}

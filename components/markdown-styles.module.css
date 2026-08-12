@@ -1,5 +1,5 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-lg leading-relaxed text-fg-muted;
 }
 
 .markdown p,
@@ -10,9 +10,45 @@
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl mt-12 mb-4 leading-snug text-fg font-bold;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl mt-8 mb-4 leading-snug text-fg font-semibold;
+}
+
+.markdown h4 {
+  @apply text-xl mt-6 mb-3 text-fg font-semibold;
+}
+
+.markdown a {
+  @apply text-bing-600 underline decoration-bing-400/30 underline-offset-2 transition-colors hover:text-bing-500 hover:decoration-bing-500 dark:text-bing-400 dark:hover:text-bing-300;
+}
+
+.markdown code {
+  @apply rounded bg-fill px-1.5 py-0.5 text-sm text-bing-700 dark:text-bing-300 font-mono;
+}
+
+.markdown pre {
+  @apply rounded-xl bg-code border border-border p-4 overflow-x-auto my-6;
+}
+
+.markdown pre code {
+  @apply bg-transparent p-0 text-fg-muted;
+}
+
+.markdown strong {
+  @apply text-fg font-semibold;
+}
+
+.markdown ul {
+  @apply list-disc pl-6 space-y-2;
+}
+
+.markdown ol {
+  @apply list-decimal pl-6 space-y-2;
+}
+
+.markdown blockquote {
+  @apply border-l-4 border-bing-500/50 pl-4 text-fg-subtle italic;
 }

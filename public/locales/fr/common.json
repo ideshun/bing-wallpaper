@@ -1,0 +1,106 @@
+{
+  "site": {
+    "name": "Bing Wallpaper",
+    "title": "Bing Wallpaper — API de fonds d'écran Bing quotidiens",
+    "description": "API de fonds d'écran Bing quotidiens — récupérez rapidement de magnifiques images du monde entier, avec plusieurs résolutions et un mode aléatoire.",
+    "h1": "API de fonds d'écran Bing quotidiens",
+    "ogSubtitle": "Récupérez rapidement de magnifiques images du monde entier, avec plusieurs résolutions et un mode aléatoire"
+  },
+  "nav": {
+    "gallery": "Galerie",
+    "usage": "Utilisation"
+  },
+  "hero": {
+    "badge": "Fond du jour · Mise à jour quotidienne",
+    "download": "Télécharger l'original",
+    "copyApi": "Copier le lien API"
+  },
+  "home": {
+    "whyTitle": "Pourquoi nous choisir ?",
+    "dailyTitle": "Fond quotidien",
+    "dailyDesc": "Obtenez le fond d'écran Bing du jour en plusieurs résolutions.",
+    "randomTitle": "Fond aléatoire",
+    "randomDesc": "Retourne un fond aléatoire de l'historique à chaque requête.",
+    "galleryTitle": "Fonds récents",
+    "galleryDesc": "Parcourez les fonds Bing des 8 derniers jours"
+  },
+  "features": {
+    "resolution": {
+      "title": "Plusieurs résolutions",
+      "description": "UHD, 1080P, HD et portrait mobile pour tous les usages"
+    },
+    "random": {
+      "title": "Fond aléatoire",
+      "description": "Choix aléatoire dans l'historique pour surprendre vos pages"
+    },
+    "history": {
+      "title": "Historique",
+      "description": "Le paramètre idx permet d'obtenir les fonds des 15 derniers jours"
+    },
+    "easy": {
+      "title": "Prêt à l'emploi",
+      "description": "Intégrez avec une balise img ou un fond CSS"
+    }
+  },
+  "endpoints": {
+    "viewHtml": "Voir l'exemple HTML",
+    "recommended": "Recommandé",
+    "uhd": {
+      "label": "UHD Ultra",
+      "description": "Original ultra HD pour écrans 4K"
+    },
+    "fhd": {
+      "label": "1080P HD",
+      "description": "HD standard pour la plupart des écrans"
+    },
+    "hd": {
+      "label": "HD",
+      "description": "Idéal pour ordinateurs portables et fonds web"
+    },
+    "m": {
+      "label": "Portrait mobile",
+      "description": "HD portrait pour fonds d'écran téléphone"
+    },
+    "rand": {
+      "label": "Aléatoire UHD",
+      "description": "Fond ultra HD aléatoire depuis l'historique"
+    },
+    "rand_fhd": {
+      "label": "Aléatoire 1080P",
+      "description": "Fond 1080P HD aléatoire"
+    },
+    "rand_hd": {
+      "label": "Aléatoire HD",
+      "description": "Fond HD aléatoire"
+    },
+    "rand_m": {
+      "label": "Aléatoire mobile",
+      "description": "Fond portrait mobile aléatoire"
+    }
+  },
+  "usage": {
+    "title": "Démarrage rapide",
+    "intro": "Utilisez le lien API comme URL d'image dans HTML, Markdown ou CSS.",
+    "html": "Intégration HTML",
+    "css": "Fond CSS",
+    "idxTitle": "Fond historique (idx)",
+    "idxDesc": "Utilisez le paramètre idx pour récupérer les fonds des jours précédents, jusqu'à 15 jours.",
+    "idxToday": "idx=0 aujourd'hui",
+    "idxYesterday": "idx=1 hier",
+    "idxWeek": "idx=7 il y a une semaine",
+    "imgAlt": "Fond d'écran Bing quotidien"
+  },
+  "copy": {
+    "label": "Copier",
+    "done": "Copié"
+  },
+  "footer": {
+    "copyright": "Les droits des fonds d'écran appartiennent à Microsoft Bing"
+  },
+  "errors": {
+    "imageLoadFailed": "Échec du chargement de l'image"
+  },
+  "date": {
+    "format": "d MMMM, EEEE"
+  }
+}

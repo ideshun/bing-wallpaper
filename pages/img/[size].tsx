@@ -1,53 +1,77 @@
-/*
- * @Author: Deshun
- * @Date: 2023-12-26 17:38:20
- * @LastEditors: Deshun
- * @Description: 获取 Bing 每日壁纸图片
- * @FilePath: /bing.w3h5.com/pages/img/[size].tsx
- * Copyright (c) 2023 by contact@w3h5.com, All Rights Reserved.
+import type { GetServerSideProps } from 'next'
+import { findKey, getBingImages } from '../../lib/api'
+import type { AppLocale } from '../../lib/i18n'
+
+const sizes: Record<string, string> = {
+  uhd: 'UHD',
+  fhd: '1920x1080',
+  hd: '1366x768',
+  m: '1080x1920',
+  rand: 'UHD',
+  rand_fhd: '1920x1080',
+  rand_hd: '1366x768',
+  rand_m: '1080x1920',
+}
+
+const ERROR_TEXT: Record<AppLocale, string> = {
+  'zh-CN': '图片加载失败',
+  en: 'Failed to load image',
+  'zh-TW': '圖片載入失敗',
+  de: 'Bild konnte nicht geladen werden',
+  fr: "Échec du chargement de l'image",
+  ja: '画像の読み込みに失敗しました',
+  ru: 'Не удалось загрузить изображение',
+}
+
+type Props = {
+  imageUrl: string | null
+  locale: string
+}
+
+/**
+ * 壁纸图片 API 路由 — 302 重定向到 Bing 原图
  */
-import { findKey, getBingImages } from "../../lib/api";
+const DynamicPage = ({ imageUrl, locale }: Props) => {
+  if (!imageUrl) {
+    const text = ERROR_TEXT[(locale as AppLocale) in ERROR_TEXT ? (locale as AppLocale) : 'zh-CN']
+    return <p>{text}</p>
+  }
+  return null
+}
 
-const sizes = {
-  uhd: "UHD", // Bing 每日壁纸 UHD 超高清原图
-  fhd: "1920x1080", // Bing 每日壁纸 1080P 高清
-  hd: "1366x768", // Bing 每日壁纸标清
-  m: "1080x1920", // Bing 每日壁纸手机版 1080P 高清
-  rand: "UHD", // 随机获取 Bing 历史壁纸 UHD 超高清原图
-  rand_fhd: "1920x1080", // 随机获取 Bing 历史壁纸 1080P 高清
-  rand_hd: "1366x768", // 随机获取 Bing 历史壁纸普清
-  rand_m: "1080x1920", // 随机获取 Bing 每日壁纸手机版 1080P 高清
-};
-
-const DynamicPage = ({ imageUrl }) => {
-  return (
-    <img src={imageUrl} alt="Bing 每日壁纸" /> || <p>Error loading image</p>
-  );
-};
-
-export async function getServerSideProps({ params, query }) {
+export const getServerSideProps: GetServerSideProps<Props> = async ({
+  params,
+  query,
+  res,
+  locale,
+}) => {
   try {
-    const { size } = params;
-    const { idx } = query;
-    let type = "UHD";
-    const key = findKey(sizes, size.toLowerCase());
-    if (key) type = sizes[key];
-    const isRand = key.includes("rand"); // 如果是随机(含有随机字符)
-    if (isRand) {
-      const ind = Math.floor(Math.random() * 15); // 随机获取 15 以内的整数
-      return {
-        props: { imageUrl: await getBingImages({ ind, type }) },
-      };
+    const size = params?.size as string
+    const idx = query.idx ? Number(query.idx) : 0
+    let type = 'UHD'
+
+    const key = findKey(sizes, size?.toLowerCase() ?? '')
+    if (key) type = sizes[key]
+
+    const isRand = key?.includes('rand') ?? false
+    const ind = isRand ? Math.floor(Math.random() * 15) : idx % 15
+
+    const imageUrl = await getBingImages({ ind, type })
+
+    if (imageUrl && res) {
+      res.writeHead(302, {
+        Location: imageUrl,
+        'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+        'X-Robots-Tag': 'noindex, nofollow',
+      })
+      res.end()
     }
-    return {
-      props: { imageUrl: await getBingImages({ ind: idx && idx % 15, type }) }, // 页面接受一个idx参数，指定几天前的壁纸，如果有该参数，会自动取几天前的壁纸，最大支持15天
-    };
+
+    return { props: { imageUrl: imageUrl || null, locale: locale || 'zh-CN' } }
   } catch (error) {
-    console.error("Error fetching image:", error.message);
-    return {
-      props: { imageUrl: null },
-    };
+    console.error('Error fetching image:', error instanceof Error ? error.message : error)
+    return { props: { imageUrl: null, locale: locale || 'zh-CN' } }
   }
 }
 
-export default DynamicPage;
+export default DynamicPage
