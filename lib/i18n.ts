@@ -30,6 +30,30 @@ export const LOCALE_SHORT_LABELS: Record<AppLocale, string> = {
   ru: 'RU',
 }
 
+/** Bing HPImageArchive 市场代码映射 */
+export const BING_MKT_MAP: Record<AppLocale, string> = {
+  'zh-CN': 'zh-CN',
+  en: 'en-US',
+  // Bing 无可用繁体标题，取简体市场后再本地转繁体
+  'zh-TW': 'zh-CN',
+  de: 'de-DE',
+  fr: 'fr-FR',
+  ja: 'ja-JP',
+  // Bing 俄语市场常返回 ROW + title=Info，改用英文市场拿有效文案
+  ru: 'en-GB',
+}
+
+/**
+ * 将应用语言转为 Bing mkt
+ * @param locale - 应用语言
+ */
+export function toBingMkt(locale?: string): string {
+  if (locale && locale in BING_MKT_MAP) {
+    return BING_MKT_MAP[locale as AppLocale]
+  }
+  return BING_MKT_MAP[DEFAULT_LOCALE]
+}
+
 /** Open Graph locale 映射 */
 export const OG_LOCALE_MAP: Record<AppLocale, string> = {
   'zh-CN': 'zh_CN',

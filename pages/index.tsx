@@ -14,7 +14,6 @@ import { getSiteUrlFromRequest } from '../lib/site-url'
 import {
   FALLBACK_WALLPAPER,
   getCachedRecentWallpapers,
-  getCachedTodayWallpaper,
 } from '../lib/wallpaper-cache'
 import type { GetServerSideProps } from 'next'
 import nextI18NextConfig from '../next-i18next.config'
@@ -90,17 +89,15 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ req, res, 
   )
 
   try {
-    const [todayWallpaper, recentWallpapers] = await Promise.all([
-      getCachedTodayWallpaper(),
-      getCachedRecentWallpapers(),
-    ])
+    const recentWallpapers = await getCachedRecentWallpapers(locale || 'zh-CN')
+    const todayWallpaper = recentWallpapers[0] ?? FALLBACK_WALLPAPER
 
     return {
       props: {
         ...i18nProps,
         siteUrl,
-        todayWallpaper: todayWallpaper ?? FALLBACK_WALLPAPER,
-        recentWallpapers: recentWallpapers ?? [],
+        todayWallpaper,
+        recentWallpapers,
       },
     }
   } catch {

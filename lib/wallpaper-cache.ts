@@ -1,5 +1,7 @@
 import type { BingWallpaper } from './api'
 import { getBingWallpapers } from './api'
+import { DEFAULT_LOCALE } from './i18n'
+import { toTraditionalZh } from './zh-convert'
 
 /** 缓存条目 */
 interface CacheEntry<T> {
@@ -9,39 +11,89 @@ interface CacheEntry<T> {
 
 const TTL_MS = 60 * 60 * 1000 // 1 小时
 
-let todayCache: CacheEntry<BingWallpaper | null> | null = null
-let recentCache: CacheEntry<BingWallpaper[]> | null = null
+/** 按应用语言缓存，避免 zh-TW 转换结果与 zh-CN 互相覆盖 */
+const recentCache = new Map<string, CacheEntry<BingWallpaper[]>>()
+/** 同一语言并发请求复用，避免 banner / 画廊各打一次 */
+const inflight = new Map<string, Promise<BingWallpaper[]>>()
 
 /**
- * 获取今日壁纸（带内存缓存）
+ * 将壁纸文案转为繁体（用于 zh-TW）
+ * @param wallpaper - 简体壁纸数据
  */
-export async function getCachedTodayWallpaper(): Promise<BingWallpaper | null> {
-  if (todayCache && Date.now() < todayCache.expiresAt) {
-    return todayCache.data
+function toTraditionalWallpaper(wallpaper: BingWallpaper): BingWallpaper {
+  return {
+    ...wallpaper,
+    title: toTraditionalZh(wallpaper.title),
+    copyright: toTraditionalZh(wallpaper.copyright),
   }
-
-  const [wallpaper] = await getBingWallpapers({ ind: 0, num: 1, type: '1920x1080' })
-  todayCache = { data: wallpaper ?? null, expiresAt: Date.now() + TTL_MS }
-  return todayCache.data
 }
 
 /**
- * 获取近期壁纸列表（带内存缓存）
+ * 拉取并缓存某语言的近期壁纸（含今日）
+ * @param locale - 应用语言
  */
-export async function getCachedRecentWallpapers(): Promise<BingWallpaper[]> {
-  if (recentCache && Date.now() < recentCache.expiresAt) {
-    return recentCache.data
+async function loadLocaleWallpapers(
+  locale: string = DEFAULT_LOCALE
+): Promise<BingWallpaper[]> {
+  const cacheKey = locale || DEFAULT_LOCALE
+  const cached = recentCache.get(cacheKey)
+  if (cached && Date.now() < cached.expiresAt) {
+    return cached.data
   }
 
-  const wallpapers = await getBingWallpapers({ ind: 0, num: 8, type: '1920x1080' })
-  recentCache = { data: wallpapers, expiresAt: Date.now() + TTL_MS }
-  return recentCache.data
+  const pending = inflight.get(cacheKey)
+  if (pending) return pending
+
+  const request = getBingWallpapers({
+    ind: 0,
+    num: 8,
+    type: '1920x1080',
+    locale,
+  })
+    .then((wallpapers) => {
+      const localized =
+        cacheKey === 'zh-TW'
+          ? wallpapers.map(toTraditionalWallpaper)
+          : wallpapers
+      recentCache.set(cacheKey, {
+        data: localized,
+        expiresAt: Date.now() + TTL_MS,
+      })
+      return localized
+    })
+    .finally(() => {
+      inflight.delete(cacheKey)
+    })
+
+  inflight.set(cacheKey, request)
+  return request
+}
+
+/**
+ * 获取今日壁纸（与画廊同一份数据的首项）
+ * @param locale - 应用语言
+ */
+export async function getCachedTodayWallpaper(
+  locale: string = DEFAULT_LOCALE
+): Promise<BingWallpaper | null> {
+  const wallpapers = await loadLocaleWallpapers(locale)
+  return wallpapers[0] ?? null
+}
+
+/**
+ * 获取近期壁纸列表（按语言缓存）
+ * @param locale - 应用语言
+ */
+export async function getCachedRecentWallpapers(
+  locale: string = DEFAULT_LOCALE
+): Promise<BingWallpaper[]> {
+  return loadLocaleWallpapers(locale)
 }
 
 /** 首页壁纸数据的兜底值 */
 export const FALLBACK_WALLPAPER: BingWallpaper = {
   url: '',
-  title: 'Bing 每日壁纸',
+  title: 'Bing Wallpaper',
   copyright: '',
   date: '',
   idx: 0,

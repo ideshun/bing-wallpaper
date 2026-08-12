@@ -13,6 +13,11 @@ const nextConfig = {
         hostname: 'cn.bing.com',
         pathname: '/th/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.bing.com',
+        pathname: '/th/**',
+      },
     ],
   },
 }
