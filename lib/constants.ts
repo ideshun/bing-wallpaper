@@ -10,6 +10,13 @@ export const SITE_URL = DEFAULT_SITE_URL
 export const GITHUB_URL = 'https://github.com/ideshun/bing-wallpaper'
 export const CMS_NAME = 'Markdown'
 
+/** Matomo 统计 */
+export const MATOMO_URL = 'https://a.w3to.dev/'
+export const MATOMO_SITE_ID = '16'
+
+/** Google Analytics 4 */
+export const GA_MEASUREMENT_ID = 'G-455T3QD0VM'
+
 /** @deprecated 保留兼容 */
 export const EXAMPLE_PATH = 'blog-starter'
 export const HOME_OG_IMAGE_URL = `${CANONICAL_SITE_URL}/api/og`

@@ -153,6 +153,44 @@ pnpm build     # 或 npm run build
 
 - 建议服务器至少 1GB 可用内存再执行 build
 
+### 4. 部署后页面无样式（像纯 HTML）
+
+Next.js 样式在 `/_next/static/css/` 里，**必须 build 后 restart**，且 HTML 与 CSS 文件名 hash 要一致。
+
+**在服务器上检查：**
+
+```bash
+cd /www/wwwroot/bing-wallpaper
+ls -la .next/static/css/    # 应有 .css 文件
+pnpm build                  # 若目录空或很旧，重新构建
+# 宝塔 Node 项目 → 重启
+```
+
+**在浏览器 F12 → Network：**
+
+- 找 `/_next/static/css/xxxxx.css` 是否为 **200**
+- 若是 **404**，多半是：只 `git pull` 了但没 `pnpm build`，或 **CDN 缓存了旧 HTML**（新 CSS hash 对不上）
+
+你站点响应头里有 `eo-cache`，若用了 **EdgeOne / CDN**，部署后请 **刷新 CDN 缓存**（至少刷新 `/` 和 `/_next/static/*`），再强制刷新浏览器（Ctrl+F5）。
+
+**典型现象（HTML 与静态资源 hash 不一致）：**
+
+```
+GET /_next/static/css/b4ad15e39e3874f1.css 404
+GET /_next/static/GlgyjFgz4s1g1rW1OBqg5/_buildManifest.js 404
+```
+
+说明浏览器/CDN 拿到的是**旧 HTML**，但服务器已是**新 build**。EdgeOne 控制台 → 缓存刷新 → 刷新 URL `https://bz.w3h5.com/` 即可。
+
+**宝塔安装注意：** 构建前要用完整依赖（含 devDependencies），Tailwind 在 devDependencies 里：
+
+```bash
+pnpm install    # 不要加 --prod
+pnpm build
+```
+
+**Nginx 不要拦截静态资源：** `/_next/` 必须反代到 Node（你当前的 `location /` 反代是对的）；勿把 `/_next` 当成磁盘目录去 `root` 或 return 404。
+
 ---
 
 ## 八、多域名绑定

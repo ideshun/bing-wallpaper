@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import { appWithTranslation } from 'next-i18next/pages'
 import { ThemeProvider } from 'next-themes'
+import Analytics from '../components/analytics'
 import '../styles/index.css'
 
 const inter = Inter({
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <div className={`${inter.variable} ${display.variable} font-sans`}>
+        <Analytics />
         <Component {...pageProps} />
       </div>
     </ThemeProvider>
